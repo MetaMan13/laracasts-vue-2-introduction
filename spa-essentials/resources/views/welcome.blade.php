@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,16 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="one">
-        <p>@{{ user.name }}</p>
-    </div>
+    <div id="app">
 
-    <div id="two">
-        <p>@{{ user.name }}</p>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

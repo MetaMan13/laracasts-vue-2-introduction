@@ -1,3 +1,5 @@
+window.Event = new Vue();
+
 Vue.component('coupon', {
     template: '<input placeholder="Enter coupon code" @blur="onCouponApplied">',
 
@@ -5,7 +7,8 @@ Vue.component('coupon', {
         onCouponApplied()
         {
             console.log('Applied | child')
-            this.$emit('applied')
+
+            Event.$emit('applied');
         }
     }
 })
@@ -13,12 +16,10 @@ Vue.component('coupon', {
 const app = new Vue({
     el: '#root',
     data: {
-
+        couponApplied: false
     },
-    methods: {
-        onCouponApplied()
-        {
-            console.log('Applied | parent');
-        }
+
+    created(){
+        Event.$on('applied', () => console.log('Coupon applied'));
     }
 });
