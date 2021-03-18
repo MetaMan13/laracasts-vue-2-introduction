@@ -1,4 +1,7 @@
 window._ = require('lodash');
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
