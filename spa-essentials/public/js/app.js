@@ -1872,7 +1872,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      statuses: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('/statuses').then(function (_ref) {
+      var data = _ref.data;
+      return _this.statuses = data;
+    });
+  }
+});
 
 /***/ }),
 
@@ -37563,14 +37587,38 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "bg-blue-600" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      _vm._l(_vm.statuses, function(status) {
+        return _c(
+          "div",
+          { key: status.id, staticClass: "mt-8 text-gray-100" },
+          [
+            _c("h3", [
+              _vm._v(
+                "\n                " +
+                  _vm._s(status.user.name) +
+                  " said...\n            "
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", { domProps: { textContent: _vm._s(status.body) } })
+          ]
+        )
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "bg-blue-600 h-24 flex justify-center" }, [
+    return _c("div", { staticClass: "h-24 flex justify-center" }, [
       _c(
         "h1",
         { staticClass: "font-semibold text-gray-50 text-2xl self-center" },
